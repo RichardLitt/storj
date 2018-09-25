@@ -22,34 +22,33 @@ retrieve those files!
 - [Contributing](#start-contributing-to-storj)
 - [Using via Storj CLI](#start-using-storj-via-the-storj-cli)
 - [Using via AWS S3 CLI](#start-using-storj-via-the-aws-s3-cli)
+- [Contribute](#contribute)
 - [License](#license)
 - [Support](#support)
 
-# Start Contributing to Storj
+## Start Contributing to Storj
 
 ### Install required packages
 
-Download and install the latest release of Go, at least Go 1.11:
-https://golang.org/
+Download and install the latest release of Go (at least Go 1.11), at [golang.org](https://golang.org).
 
-You will also need Git. (`brew install git`, `apt-get install git`, etc).
+You will also need [Git](https://git-scm.com/downloads). (`brew install git` on OSX, `apt-get install git` on Linux, etc).
 
-Install git and golang. We support Linux, Mac, and Windows operating
-systems. Other operating systems supported by Go are probably not much
-additional work.
+Install Git and golang. We support Linux, OSX, and Windows operating
+systems. Other operating systems which support Go may also be used with some configuration.
 
 ### Download and compile Storj
 
-> **Aside about GOPATH**: Go 1.11 supports a new feature called Go modules,
+> **Aside about GOPATH**: If you don't have a GOPATH set, you can ignore this aside. If you do, Go 1.11 supports a new feature called Go modules,
 > and Storj has adopted Go module support. If you've used previous Go versions,
 > Go modules no longer require a GOPATH environment variable. Go by default
 > falls back to the old behavior if you check out code inside of the directory
 > referenced by your GOPATH variable, so make sure to use another directory,
 > `unset GOPATH` entirely, or set `GO111MODULE=on` before continuing with these
-> instructions. If you don't have a GOPATH set, you can ignore this aside.
+> instructions. 
 
 ```bash
-git clone git@github.com:storj/storj storj
+git clone git@github.com:storj/storj
 cd storj
 go install -v ./cmd/...
 ```
@@ -76,10 +75,10 @@ You can execute only a single test package if you like. For example:
 `go test ./pkg/kademlia`. Add `-v` for more informations about the executed unit
 tests.
 
-# Start Using Storj via the Storj CLI
+## Start Using Storj via the Storj CLI
 
 #### Configure the Storj CLI
-1) In a new terminal setup the Storj CLI: ```$ storj setup```
+1) In a new terminal window, set up the Storj CLI: ```$ storj setup```
 2) Edit the API Key, overlay address, and pointer db address fields in the Storj
 CLI config file located at ```~/.storj/cli/config.yaml``` with values from the
 captplanet config file located at ```~/.storj/capt/config.yaml```
@@ -93,7 +92,7 @@ captplanet config file located at ```~/.storj/capt/config.yaml```
 6) Delete an object: ```$ storj rm s3://bucket-name/your-large-file.mp4```
 
 
-# Start Using Storj via the AWS S3 CLI
+## Start Using Storj via the AWS S3 CLI
 
 #### Configure AWS CLI
 
@@ -120,7 +119,19 @@ $ aws configure set default.s3.multipart_threshold 1TB  # until we support multi
 
 For more information about the AWS s3 CLI visit: https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
 
-# License
+## Contribute
+
+Storj is an open source project. We're highly interested in working with new contributors, and in facilitating a great open source community! If you're interested in contributing, take a look at [the issues](https://github.com/storj/storj/issues), review someone else's [PRs](https://github.com/storj/storj/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc) or create your own, or join us on our [Rocketchat](https://community.storj.io/).
+
+Please note that all interactions regarding Storj should follow the [Code of Conduct](CODE_OF_CONDUCT.md). By interacting with this repository, you're agreeing to uphold the values in the code.
+
+## Support
+
+If you have any questions or suggestions please reach out to us on
+[Rocketchat](https://community.storj.io/) or
+[Twitter](https://twitter.com/storjproject).
+
+## License
 
 The network under construction (this repo) is currently licensed with the 
 [AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html) license. Once the network 
@@ -131,8 +142,3 @@ For code released under the AGPLv3, we request that contributors sign
 [our Contributor License Agreement (CLA)](https://docs.google.com/forms/d/e/1FAIpQLSdVzD5W8rx-J_jLaPuG31nbOzS8yhNIIu4yHvzonji6NeZ4ig/viewform) so that we can relicense the
 code under Apache v2, or other licenses in the future.
 
-# Support
-
-If you have any questions or suggestions please reach out to us on
-[Rocketchat](https://community.storj.io/) or
-[Twitter](https://twitter.com/storjproject).
